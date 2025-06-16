@@ -22,7 +22,7 @@ export default function File() {
   useEffect(() => {
     const clearBackend = async () => {
       try {
-        const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/clear_live', {
+        const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /clear_live', {
           method: 'POST',
         });
         if (!res.ok) throw new Error('Failed to clear');
@@ -59,7 +59,7 @@ export default function File() {
     formData.append('file', file);
 
     try {
-      const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/upload', {
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /upload', {
         method: 'POST',
         body: formData,
       });
@@ -86,7 +86,7 @@ export default function File() {
   }
 
   try {
-    const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/process', { method: 'POST' });
+    const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /process', { method: 'POST' });
     if (!res.ok) throw new Error('Server error');
 
     const data = await res.json();
@@ -110,7 +110,7 @@ export default function File() {
 
   const fetchTranscript = async () => {
   try {
-    const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/get_transcript',{
+    const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /get_transcript',{
       method:"GET",
       headers: {
         "ngrok-skip-browser-warning": "true",  // ✅ correct spelling
@@ -133,7 +133,7 @@ export default function File() {
       intervalIdRef.current = null;
     }
 
-    const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/clear', { method: 'POST' });
+    const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /clear', { method: 'POST' });
     if (res.ok) {
       alert('Files cleared successfully.');
 
@@ -163,7 +163,7 @@ export default function File() {
 
   const fetchSummary = async () => {
     try {
-      const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/get_summary_live',{
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /get_summary_live',{
       method:"GET",
       headers: {
         "ngrok-skip-browser-warning": "true",  // ✅ correct spelling
@@ -180,7 +180,7 @@ export default function File() {
 
   const fetchTranslation = async () => {
     try {
-      const res = await fetch('https://66eb-223-181-107-136.ngrok-free.app/get-translation',{
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /get-translation',{
       method:"GET",
       headers: {
         "ngrok-skip-browser-warning": "true",  // ✅ correct spelling
@@ -231,7 +231,7 @@ export default function File() {
             value={language}
             onChange={(e) => {
               setLanguage(e.target.value);
-              fetch('https://66eb-223-181-107-136.ngrok-free.app/set_language', {
+              fetch('https://ee43-223-181-107-136.ngrok-free.app /set_language', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ language: e.target.value }),
