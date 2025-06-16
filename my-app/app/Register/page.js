@@ -68,7 +68,7 @@ export default function Register() {
       const formData = new FormData();
       formData.append('audio', blob, 'newuser.wav');
 
-      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /upload-User', {
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app/upload-User', {
         method: 'POST',
         body: formData,
       });
@@ -83,7 +83,7 @@ export default function Register() {
 
   const processRecording = async () => {
     try {
-      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /transcribeUser',{
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app/transcribeUser',{
       method:"GET",
       headers: {
         "ngrok-skip-browser-warning": "true",  // ✅ correct spelling
@@ -107,7 +107,7 @@ export default function Register() {
   alert(`✅ Verified!\nName: ${name}`);
 
   try {
-    const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /register-speaker', {
+    const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app/register-speaker', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name }),
@@ -130,7 +130,7 @@ export default function Register() {
   const fetchUsers = async () => {
   if (!usersVisible) {
     try {
-      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /list-users',{
+      const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app/list-users',{
       method:"GET",
       headers: {
         "ngrok-skip-browser-warning": "true",  // ✅ correct spelling
@@ -152,7 +152,7 @@ export default function Register() {
 useEffect(() => {
     const clearBackend = async () => {
       try {
-        const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app /clear_live', {
+        const res = await fetch('https://ee43-223-181-107-136.ngrok-free.app/clear_live', {
           method: 'POST',
         });
         if (!res.ok) throw new Error('Failed to clear');
